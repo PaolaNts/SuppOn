@@ -18,18 +18,20 @@
     position: relative;
     width: 100%;
    
-    
-    
+    border: none;
+    border-radius: 20px;
    
    
 }
 .btn2{
-   background-color: aquamarine;
-   width: 200px;
+   background-color: #4070f4;
+   width: 350px;
    height: 50px;
    margin: 40px;
-   
-  
+   border: none;
+   border-radius: 20px;
+   color: white;
+   font-size: 20px;
 }
 .caixa{
 
@@ -64,5 +66,8 @@
     
     text-align: center;
     font-size: 15px;
+    color: white;
+}
+.wowfadeInUp{
     color: white;
 }

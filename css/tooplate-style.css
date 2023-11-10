@@ -385,6 +385,7 @@
     color: #ffffff;
     padding-bottom: 10px;
     margin-top: 0;
+    
   }
 
   #home h3 {
@@ -399,6 +400,7 @@
 
   .slider .container {
     width: 100%;
+  
   }
 
   .slider .owl-dots {
@@ -749,6 +751,7 @@
   footer {
     padding-top: 80px;
     padding-bottom: 40px;
+    background-color: #4070f4;
   }
 
   footer h4 {
@@ -756,11 +759,11 @@
   }
 
   footer a {
-    color: #757575;
+    color: #ffffff;
   }
 
   footer a:hover {
-    color: #4267b2;
+    color: #ffffff;
   }
 
   .contact-info {
@@ -768,9 +771,9 @@
   }
 
   .contact-info .fa {
-    background: #393939;
+    background: #ffffff;
     border-radius: 100%;
-    color: #ffffff;
+    color: #4070f4;
     font-size: 15px;
     width: 35px;
     height: 35px;
@@ -787,7 +790,7 @@
  
   .copyright-text p,
   .footer-link a {
-    color: #858585;
+    color: #ffffff;
     font-size: 12px;
     font-weight: 500;
   }
@@ -844,7 +847,7 @@
 
   .social-icon li a {
     
-    color: #464646;
+    color: #747474;
     font-size: 15px;
     width: 35px;
     height: 35px;
