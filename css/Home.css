@@ -48,13 +48,13 @@
   content: "\f187";
 }
 .menu li a.pencil:before {
-  content: "\f040";
+  content: "\f007";
 }
 .menu li a.contact:before {
   content: "\f003";
 }
 .menu li a.about:before {
-  content: "\f007";
+  content: "\f0d6";
 }
 .menu li a.home:before {
   content: "\f039";
