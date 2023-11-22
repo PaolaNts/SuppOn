@@ -36,8 +36,8 @@ db.once('open', () => console.log("Connected to Database"));
 app.get("/", (req, res) => {
 
     res.set({
-        "Allow-access-Allow-Origin": '*'
-    })
+        "Access-Control-Allow-Methods": "GET, POST"
+    });
 
     return res.redirect('Home.html');
 
@@ -47,23 +47,19 @@ app.get("/", (req, res) => {
 
 app.post("/login", async (request, response) => {
     try {
-        //adding
-        const username = request.body.username;
+        const useremail = request.body.useremail;
         const password = request.body.password;
 
-        const usermail = db.collection('users').findOne({ email: username }, (err, res) => {
-            if (err) throw err;
-            if (res.password === password) {
-                return response.redirect('login.html');
-            }
-            else {
-                response.send("Invalid Password!❌❌❌");
-            }
-        });
+        const user = await db.collection('costumers').findOne({ email: useremail });
 
-    }
-    catch (error) {
-        response.status(400).send("Invalid information❌");
-    }
+        if (user && user.password === password) {
+            return response.redirect('Home.html');
+        } else {
+            response.send("Senha Inválida!❌❌❌");
+        }
 
-})
+    } catch (error) {
+        console.error("Erro durante o login:", error);
+        response.status(400).send("Informações Inválidas❌");
+    }
+});
