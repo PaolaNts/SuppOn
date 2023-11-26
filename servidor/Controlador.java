@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 
-public class Controlador extends Thread{
+public class Controlador extends Thread {
     
     private Socket conexao;
 
@@ -12,7 +12,7 @@ public class Controlador extends Thread{
         this.conexao = conexao;
     }
 
-    public void handleRequest() {
+    public boolean handleRequest() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(conexao.getInputStream()));
              OutputStream outputStream = conexao.getOutputStream()) {
 
@@ -38,13 +38,16 @@ public class Controlador extends Thread{
             String response = responseHeaders + jsonResponse;
             outputStream.write(response.getBytes());
 
+            return true; // Retornar true se a solicitação for tratada com sucesso
         } catch (Exception e) {
             e.printStackTrace();
+            return false; // Retornar false se ocorrer uma exceção
         }
     }
 
     @Override
     public void run(){
         boolean teste = handleRequest();
+        System.out.println("A solicitação foi tratada com sucesso? " + teste);
     }
 }
