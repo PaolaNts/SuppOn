@@ -20,11 +20,7 @@ public class Servidor extends Thread {
                 System.out.println(inputLine);
             }
 
-            out.println("HTTP/1.1 200 OK");
-            out.println("Content-Type: text/html");
-            out.println("Access-Control-Allow-Origin: *");
-            out.println(); // Linha em branco entre cabeçalho e corpo
-            out.println("{ \"message\": \"Solicitação recebida!\" }");
+         
         } catch (IOException e) {
             e.printStackTrace();
         }
